@@ -1,4 +1,4 @@
-# grpc-csharp-course
+# gRPC C#
 
 ## Reminder
 
