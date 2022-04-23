@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.20.0" />
+    <PackageReference Include="Grpc.Net.Client" Version="2.45.0" />
+    <PackageReference Include="Grpc.Tools" Version="2.45.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+
+    <Protobuf Include="../proto/calculator.proto" GrpcServices="Client" Link="Protos/calculator.proto" />
+    <Protobuf Include="../proto/sum.proto" GrpcServices="Client" Link="Protos/sum.proto" />
+    <Protobuf Include="../proto/primes.proto" GrpcServices="Client" Link="Protos/primes.proto" />
+    <Protobuf Include="../proto/avg.proto" GrpcServices="Client" Link="Protos/avg.proto" />
+    <Protobuf Include="../proto/max.proto" GrpcServices="Client" Link="Protos/max.proto" />
+    <Protobuf Include="../proto/sqrt.proto" GrpcServices="Client" Link="Protos/sqrt.proto" />
+  </ItemGroup>
+
+</Project>
