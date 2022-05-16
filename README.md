@@ -13,3 +13,17 @@ When cloning the repository the working directory will be empty, in order to get
 ```
 git submodule update --init --recursive
 ```
+
+then to install the templates run:
+
+```
+dotnet new --install working/templates/grpcserver
+dotnet new --install working/templates/grpcclient
+```
+
+and to uninstall:
+
+```
+dotnet new --uninstall working/templates/grpcserver
+dotnet new --uninstall working/templates/grpcclient
+```
