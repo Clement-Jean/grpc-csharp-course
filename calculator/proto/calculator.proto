@@ -1,13 +1,14 @@
 syntax = "proto3";
 
 package calculator;
-option csharp_namespace = "CalculatorPb";
 
 import "avg.proto";
 import "max.proto";
 import "primes.proto";
 import "sqrt.proto";
 import "sum.proto";
+
+option csharp_namespace = "CalculatorPb";
 
 service CalculatorService {
   rpc Sum(SumRequest) returns (SumResponse);

@@ -1,9 +1,10 @@
 syntax = "proto3";
 
 package blog;
-option csharp_namespace = "BlogPb";
 
 import "google/protobuf/empty.proto";
+
+option csharp_namespace = "BlogPb";
 
 message Blog {
   string id = 1;
