@@ -88,9 +88,9 @@ static async Task DoGreetWithDeadline(GreetService.GreetServiceClient client, Da
 using var channel = GrpcChannel.ForAddress("https://localhost:50051");
 var client = new GreetService.GreetServiceClient(channel);
 
-// await DoGreet(client);
+await DoGreet(client);
 // await DoGreetManyTimes(client);
 // await DoLongGreet(client);
 // await DoGreetEveryone(client);
-await DoGreetWithDeadline(client, DateTime.UtcNow.AddSeconds(1));
+// await DoGreetWithDeadline(client, DateTime.UtcNow.AddSeconds(1));
 // await DoGreetWithDeadline(client, DateTime.UtcNow.AddSeconds(5));
