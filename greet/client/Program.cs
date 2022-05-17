@@ -1,4 +1,4 @@
-﻿using Greet;
+﻿using GreetPb;
 using Grpc.Net.Client;
 using Grpc.Core;
 
@@ -8,7 +8,7 @@ static async Task DoGreet(GreetService.GreetServiceClient client)
     {
         FirstName = "Clement"
     });
-    Console.WriteLine("Greet: " + response.Result);
+    Console.WriteLine($"Greet: {response.Result}");
 }
 
 static async Task DoGreetManyTimes(GreetService.GreetServiceClient client)
@@ -85,7 +85,9 @@ static async Task DoGreetWithDeadline(GreetService.GreetServiceClient client, Da
     }
 }
 
-using var channel = GrpcChannel.ForAddress("https://localhost:50051");
+var tls = false; // change if needed
+var protocol = tls ? "https" : "http";
+using var channel = GrpcChannel.ForAddress($"{protocol}://localhost:50051");
 var client = new GreetService.GreetServiceClient(channel);
 
 await DoGreet(client);

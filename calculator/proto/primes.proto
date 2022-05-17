@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 package calculator;
+option csharp_namespace = "CalculatorPb";
 
 message PrimeRequest {
   int64 number = 1;

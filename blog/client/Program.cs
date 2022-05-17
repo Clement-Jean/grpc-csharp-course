@@ -1,4 +1,4 @@
-﻿using Blog;
+﻿using BlogPb;
 using Grpc.Net.Client;
 using Grpc.Core;
 using Google.Protobuf.WellKnownTypes;
@@ -44,7 +44,7 @@ static async Task UpdateBlog(BlogService.BlogServiceClient client, string id)
             Content = "Content of the first blog, with some awesome additions!"
         });
 
-        Console.WriteLine($"Blog updated");
+        Console.WriteLine("Blog updated");
     }
     catch (RpcException e)
     {
@@ -71,7 +71,7 @@ static async Task DeleteBlog(BlogService.BlogServiceClient client, string id)
     {
         Empty blog = await client.DeleteBlogAsync(new BlogId { Id = id });
 
-        Console.WriteLine($"Blog deleted");
+        Console.WriteLine("Blog deleted");
     }
     catch (RpcException e)
     {

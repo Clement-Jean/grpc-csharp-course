@@ -1,10 +1,10 @@
 ﻿using Grpc.Core;
 using MongoDB.Driver;
 using MongoDB.Bson;
-using Blog;
+using BlogPb;
 using Google.Protobuf.WellKnownTypes;
 
-namespace blog.server.Services;
+namespace Blog.Server.Services;
 
 public class BlogServiceImpl : BlogService.BlogServiceBase
 {
@@ -37,7 +37,7 @@ public class BlogServiceImpl : BlogService.BlogServiceBase
     }
 
     public override async Task<BlogId> CreateBlog(
-      Blog.Blog request,
+      BlogPb.Blog request,
       ServerCallContext context)
     {
         Console.WriteLine($"CreateBlog was invoked with {request}");
@@ -64,7 +64,7 @@ public class BlogServiceImpl : BlogService.BlogServiceBase
         };
     }
 
-    public override async Task<Blog.Blog> ReadBlog(
+    public override async Task<BlogPb.Blog> ReadBlog(
         BlogId request,
         ServerCallContext context)
     {
@@ -82,7 +82,7 @@ public class BlogServiceImpl : BlogService.BlogServiceBase
         ));
 
 
-        return new Blog.Blog()
+        return new BlogPb.Blog()
         {
             AuthorId = result.GetValue("author_id").AsString,
             Title = result.GetValue("title").AsString,
@@ -91,7 +91,7 @@ public class BlogServiceImpl : BlogService.BlogServiceBase
     }
 
     public override async Task<Empty> UpdateBlog(
-        Blog.Blog request,
+        BlogPb.Blog request,
         ServerCallContext context)
     {
         Console.WriteLine($"UpdateBlog was invoked with {request}");
@@ -116,17 +116,17 @@ public class BlogServiceImpl : BlogService.BlogServiceBase
 
     public override async Task ListBlogs(
         Empty request,
-        IServerStreamWriter<Blog.Blog> responseStream,
+        IServerStreamWriter<BlogPb.Blog> responseStream,
         ServerCallContext context)
     {
-        Console.WriteLine($"ListBlog was invoked");
+        Console.WriteLine("ListBlog was invoked");
 
         var filter = new FilterDefinitionBuilder<BsonDocument>().Empty;
         var result = await _collection.FindAsync(filter);
 
         foreach (var item in result.ToList())
         {
-            await responseStream.WriteAsync(new Blog.Blog()
+            await responseStream.WriteAsync(new BlogPb.Blog()
             {
                 Id = item.GetValue("_id").ToString(),
                 AuthorId = item.GetValue("author_id").AsString,

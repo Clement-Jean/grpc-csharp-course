@@ -1,4 +1,4 @@
-using blog.server.Services;
+using Blog.Server.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

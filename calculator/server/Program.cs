@@ -1,4 +1,4 @@
-﻿using calculator.server.Services;
+﻿using Calculator.Server.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

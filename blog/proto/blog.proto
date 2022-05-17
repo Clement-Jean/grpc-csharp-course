@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 package blog;
+option csharp_namespace = "BlogPb";
 
 import "google/protobuf/empty.proto";
 

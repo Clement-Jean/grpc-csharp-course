@@ -1,7 +1,7 @@
 ﻿using Grpc.Core;
-using Calculator;
+using CalculatorPb;
 
-namespace calculator.server.Services;
+namespace Calculator.Server.Services;
 
 public class CalculatorServiceImpl : CalculatorService.CalculatorServiceBase
 {

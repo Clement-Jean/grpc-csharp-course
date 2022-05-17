@@ -1,17 +1,26 @@
-﻿using greet.server.Services;
+﻿using Greet.Server.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+var tls = false; // change if needed
 
-builder.WebHost.ConfigureServices((context, services) =>
+if (tls)
 {
-    HostConfig.CertificateFileLocation = context.Configuration["CertPath"];
-    HostConfig.CertificatePassword = context.Configuration["CertPassword"];
-}).ConfigureKestrel(opt =>
-{
-    opt.ListenAnyIP(50052, listenOpt =>
+    builder.WebHost.ConfigureServices((context, services) =>
     {
-        _ = listenOpt.UseHttps(HostConfig.CertificateFileLocation, HostConfig.CertificatePassword);
+        HostConfig.CertificateFileLocation = context.Configuration["CertPath"];
+        HostConfig.CertificatePassword = context.Configuration["CertPassword"];
     });
+}
+
+builder.WebHost.ConfigureKestrel(opt =>
+{
+    if (tls)
+    {
+        opt.ListenAnyIP(50052, listenOpt =>
+        {
+            _ = listenOpt.UseHttps(HostConfig.CertificateFileLocation, HostConfig.CertificatePassword);
+        });
+    }
     opt.ListenAnyIP(50051);
 });
 

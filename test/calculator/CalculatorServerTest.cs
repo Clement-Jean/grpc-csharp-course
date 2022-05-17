@@ -1,6 +1,6 @@
 ﻿using Xunit;
-using Calculator;
-using calculator.server.Services;
+using CalculatorPb;
+using Calculator.Server.Services;
 using test.Helpers;
 using System.Collections.Generic;
 using System.Threading.Tasks;

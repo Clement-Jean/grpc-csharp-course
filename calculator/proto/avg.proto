@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 package calculator;
+option csharp_namespace = "CalculatorPb";
 
 message AvgRequest {
   int32 number = 1;

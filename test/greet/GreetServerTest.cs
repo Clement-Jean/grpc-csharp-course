@@ -1,6 +1,6 @@
 ﻿using Xunit;
-using Greet;
-using greet.server.Services;
+using GreetPb;
+using Greet.Server.Services;
 using test.Helpers;
 using System.Collections.Generic;
 using System;

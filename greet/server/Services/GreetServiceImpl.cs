@@ -1,7 +1,7 @@
 using Grpc.Core;
-using Greet;
+using GreetPb;
 
-namespace greet.server.Services;
+namespace Greet.Server.Services;
 
 public class GreetServiceImpl : GreetService.GreetServiceBase
 {
