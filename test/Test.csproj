@@ -25,9 +25,8 @@
     <ProjectReference Include="..\blog\server\Blog.Server.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="blog\" />
-  </ItemGroup>
-  <ItemGroup>
+    <Folder Include="greet\" />
+    <Folder Include="calculator\" />
     <Folder Include="blog\" />
   </ItemGroup>
 </Project>

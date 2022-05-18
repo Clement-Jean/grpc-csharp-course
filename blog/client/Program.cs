@@ -1,4 +1,4 @@
-﻿using BlogPb;
+﻿using Blog;
 using Grpc.Net.Client;
 using Grpc.Core;
 using Google.Protobuf.WellKnownTypes;

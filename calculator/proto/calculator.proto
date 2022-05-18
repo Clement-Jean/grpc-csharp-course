@@ -8,7 +8,7 @@ import "primes.proto";
 import "sqrt.proto";
 import "sum.proto";
 
-option csharp_namespace = "CalculatorPb";
+option csharp_namespace = "Calculator";
 
 service CalculatorService {
   rpc Sum(SumRequest) returns (SumResponse);

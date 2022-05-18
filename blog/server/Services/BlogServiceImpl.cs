@@ -1,7 +1,7 @@
 ﻿using Grpc.Core;
 using MongoDB.Driver;
 using MongoDB.Bson;
-using BlogPb;
+using Blog;
 using Google.Protobuf.WellKnownTypes;
 
 namespace Blog.Server.Services;
@@ -37,7 +37,7 @@ public class BlogServiceImpl : BlogService.BlogServiceBase
     }
 
     public override async Task<BlogId> CreateBlog(
-      BlogPb.Blog request,
+      Blog request,
       ServerCallContext context)
     {
         Console.WriteLine($"CreateBlog was invoked with {request}");
@@ -64,7 +64,7 @@ public class BlogServiceImpl : BlogService.BlogServiceBase
         };
     }
 
-    public override async Task<BlogPb.Blog> ReadBlog(
+    public override async Task<Blog> ReadBlog(
         BlogId request,
         ServerCallContext context)
     {
@@ -82,7 +82,7 @@ public class BlogServiceImpl : BlogService.BlogServiceBase
         ));
 
 
-        return new BlogPb.Blog()
+        return new Blog()
         {
             AuthorId = result.GetValue("author_id").AsString,
             Title = result.GetValue("title").AsString,
@@ -91,7 +91,7 @@ public class BlogServiceImpl : BlogService.BlogServiceBase
     }
 
     public override async Task<Empty> UpdateBlog(
-        BlogPb.Blog request,
+        Blog request,
         ServerCallContext context)
     {
         Console.WriteLine($"UpdateBlog was invoked with {request}");
@@ -116,7 +116,7 @@ public class BlogServiceImpl : BlogService.BlogServiceBase
 
     public override async Task ListBlogs(
         Empty request,
-        IServerStreamWriter<BlogPb.Blog> responseStream,
+        IServerStreamWriter<Blog> responseStream,
         ServerCallContext context)
     {
         Console.WriteLine("ListBlog was invoked");
@@ -126,7 +126,7 @@ public class BlogServiceImpl : BlogService.BlogServiceBase
 
         foreach (var item in result.ToList())
         {
-            await responseStream.WriteAsync(new BlogPb.Blog()
+            await responseStream.WriteAsync(new Blog()
             {
                 Id = item.GetValue("_id").ToString(),
                 AuthorId = item.GetValue("author_id").AsString,

@@ -1,5 +1,5 @@
 ﻿using Xunit;
-using CalculatorPb;
+using Calculator;
 using Calculator.Server.Services;
 using test.Helpers;
 using System.Collections.Generic;

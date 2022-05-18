@@ -1,4 +1,4 @@
-﻿using CalculatorPb;
+﻿using Calculator;
 using Grpc.Net.Client;
 using Grpc.Core;
 

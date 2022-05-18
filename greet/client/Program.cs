@@ -1,4 +1,4 @@
-﻿using GreetPb;
+﻿using Greet;
 using Grpc.Net.Client;
 using Grpc.Core;
 

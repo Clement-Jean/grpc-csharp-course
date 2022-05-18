@@ -1,5 +1,5 @@
 ﻿using Xunit;
-using BlogPb;
+using Blog;
 using Blog.Server.Services;
 using test.Helpers;
 using MongoDB.Driver;
@@ -31,7 +31,7 @@ public class BlogServerTest
         try
         {
             _ = await service.CreateBlog(
-                new BlogPb.Blog(),
+                new Blog.Blog(),
                 TestServerCallContext.Create());
             Assert.True(false);
         }
@@ -85,7 +85,7 @@ public class BlogServerTest
         try
         {
             var response = await service.UpdateBlog(
-                new BlogPb.Blog { Id = new ObjectId().ToString() },
+                new Blog.Blog { Id = new ObjectId().ToString() },
                 TestServerCallContext.Create());
             Assert.True(false);
         }
@@ -106,7 +106,7 @@ public class BlogServerTest
         try
         {
             var response = await service.UpdateBlog(
-                new BlogPb.Blog(),
+                new Blog.Blog(),
                 TestServerCallContext.Create());
             Assert.True(false);
         }

@@ -1,5 +1,5 @@
 ﻿using Xunit;
-using GreetPb;
+using Greet;
 using Greet.Server.Services;
 using test.Helpers;
 using System.Collections.Generic;

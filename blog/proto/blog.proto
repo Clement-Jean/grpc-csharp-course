@@ -4,7 +4,7 @@ package blog;
 
 import "google/protobuf/empty.proto";
 
-option csharp_namespace = "BlogPb";
+option csharp_namespace = "Blog";
 
 message Blog {
   string id = 1;
