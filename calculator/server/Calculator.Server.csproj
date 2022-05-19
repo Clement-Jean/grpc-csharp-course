@@ -10,11 +10,11 @@
   <ItemGroup>
     <PackageReference Include="Grpc.AspNetCore" Version="2.45.0" />
     <Protobuf Include="../proto/calculator.proto" GrpcServices="Server" Link="Protos/calculator.proto" />
-    <Protobuf Include="../proto/sum.proto" GrpcServices="Server" Link="Protos/sum.proto" />
-    <Protobuf Include="../proto/primes.proto" GrpcServices="Server" Link="Protos/primes.proto" />
-    <Protobuf Include="../proto/avg.proto" GrpcServices="Server" Link="Protos/avg.proto" />
-    <Protobuf Include="../proto/max.proto" GrpcServices="Server" Link="Protos/max.proto" />
-    <Protobuf Include="../proto/sqrt.proto" GrpcServices="Server" Link="Protos/sqrt.proto" />
+    <Protobuf Include="../proto/sum.proto" GrpcServices="None" Link="Protos/sum.proto" />
+    <Protobuf Include="../proto/primes.proto" GrpcServices="None" Link="Protos/primes.proto" />
+    <Protobuf Include="../proto/avg.proto" GrpcServices="None" Link="Protos/avg.proto" />
+    <Protobuf Include="../proto/max.proto" GrpcServices="None" Link="Protos/max.proto" />
+    <Protobuf Include="../proto/sqrt.proto" GrpcServices="None" Link="Protos/sqrt.proto" />
     <PackageReference Include="Grpc.AspNetCore.Server.Reflection" Version="2.45.0" />
   </ItemGroup>
   <ItemGroup>
