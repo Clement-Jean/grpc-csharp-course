@@ -39,16 +39,16 @@ public class GreetServiceImpl : GreetService.GreetServiceBase
         IAsyncStreamReader<GreetRequest> requestStream,
         ServerCallContext context)
     {
-        var responses = new List<string>();
+        var names = new List<string>();
 
         await foreach (var request in requestStream.ReadAllAsync())
         {
-            responses.Add($"Hello {request.FirstName}");
+            names.Add(request.FirstName);
         }
 
         return new GreetResponse
         {
-            Result = string.Join("\n", responses.ToArray())
+            Result = string.Join("\n", names.ConvertAll(name => $"Hello {name}"))
         };
     }
 
