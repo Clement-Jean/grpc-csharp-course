@@ -11,7 +11,7 @@
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
 
-    <PackageReference Include="Grpc.Net.Client" Version="2.45.0" />
+    <PackageReference Include="Grpc.Net.Client" Version="2.46.0" />
     <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="6.0.4" />
     <PackageReference Include="Moq" Version="4.17.2" />
 

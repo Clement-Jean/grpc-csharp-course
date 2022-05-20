@@ -8,7 +8,7 @@
 
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'server' " />
   <ItemGroup>
-    <PackageReference Include="Grpc.AspNetCore" Version="2.45.0" />
+    <PackageReference Include="Grpc.AspNetCore" Version="2.46.0" />
     <PackageReference Include="MongoDB.Analyzer" Version="1.0.0" />
     <PackageReference Include="MongoDB.Driver" Version="2.15.0" />
   </ItemGroup>

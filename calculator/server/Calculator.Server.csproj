@@ -8,7 +8,7 @@
 
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'server' " />
   <ItemGroup>
-    <PackageReference Include="Grpc.AspNetCore" Version="2.45.0" />
+    <PackageReference Include="Grpc.AspNetCore" Version="2.46.0" />
     <Protobuf Include="../proto/calculator.proto" GrpcServices="Server" Link="Protos/calculator.proto" />
     <Protobuf Include="../proto/sum.proto" GrpcServices="None" Link="Protos/sum.proto" />
     <Protobuf Include="../proto/primes.proto" GrpcServices="None" Link="Protos/primes.proto" />

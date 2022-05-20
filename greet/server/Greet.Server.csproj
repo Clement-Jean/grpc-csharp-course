@@ -10,7 +10,7 @@
 
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'server' " />
   <ItemGroup>
-    <PackageReference Include="Grpc.AspNetCore" Version="2.45.0" />
+    <PackageReference Include="Grpc.AspNetCore" Version="2.46.0" />
     <Protobuf Include="../proto/greet.proto" GrpcServices="Server" Link="Protos/greet.proto" />
   </ItemGroup>
 
