@@ -66,9 +66,9 @@ public class CalculatorServiceImpl : CalculatorService.CalculatorServiceBase
 
         await foreach (var request in requestStream.ReadAllAsync())
         {
-            if (max == null || max < requestStream.Current.Number)
+            if (max == null || max < request.Number)
             {
-                max = requestStream.Current.Number;
+                max = request.Number;
                 await responseStream.WriteAsync(new MaxResponse
                 {
                     Result = max.Value
