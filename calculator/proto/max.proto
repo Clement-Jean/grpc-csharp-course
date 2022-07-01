@@ -1,7 +1,6 @@
 syntax = "proto3";
 
 package calculator;
-option csharp_namespace = "Calculator";
 
 message MaxRequest {
   int32 number = 1;
