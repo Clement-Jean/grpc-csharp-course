@@ -75,7 +75,7 @@ static async Task DoSqrt(CalculatorService.CalculatorServiceClient client, int n
 {
     try
     {
-        var response = await client.SqrtAsync(new SqrtRequest()
+        var response = await client.SqrtAsync(new SqrtRequest
         {
             Number = number
         });
@@ -84,7 +84,7 @@ static async Task DoSqrt(CalculatorService.CalculatorServiceClient client, int n
     }
     catch (RpcException e) when (e.StatusCode == StatusCode.InvalidArgument)
     {
-        Console.WriteLine("Error: " + e.Status);
+        Console.WriteLine($"Error: {e.Status}");
     }
 }
 

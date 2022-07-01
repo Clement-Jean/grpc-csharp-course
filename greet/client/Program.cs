@@ -81,7 +81,7 @@ static async Task DoGreetWithDeadline(GreetService.GreetServiceClient client, Da
     }
     catch (RpcException e) when (e.StatusCode == StatusCode.DeadlineExceeded)
     {
-        Console.WriteLine("Error: " + e.Status.StatusCode);
+        Console.WriteLine($"Error: {e.Status.StatusCode}");
     }
 }
 
