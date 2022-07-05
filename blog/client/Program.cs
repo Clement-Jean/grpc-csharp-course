@@ -7,7 +7,8 @@ static async Task<string> CreateBlog(BlogService.BlogServiceClient client)
 {
     Console.WriteLine("---CreateBlog was invoked---");
 
-    BlogId id = await client.CreateBlogAsync(new Blog.Blog {
+    BlogId id = await client.CreateBlogAsync(new Blog.Blog
+    {
         AuthorId = "Clement",
         Title = "A new blog",
         Content = "Content of the first blog"
@@ -37,7 +38,8 @@ static async Task UpdateBlog(BlogService.BlogServiceClient client, string id)
     Console.WriteLine("---UpdateBlog was invoked---");
     try
     {
-        Empty blog = await client.UpdateBlogAsync(new Blog.Blog {
+        Empty blog = await client.UpdateBlogAsync(new Blog.Blog
+        {
             Id = id,
             AuthorId = "not Clement",
             Title = "A newer blog",
