@@ -1,5 +1,4 @@
 ﻿using Grpc.Core;
-using Calculator;
 
 namespace Calculator.Server.Services;
 

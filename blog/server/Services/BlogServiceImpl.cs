@@ -1,7 +1,6 @@
 ﻿using Grpc.Core;
 using MongoDB.Driver;
 using MongoDB.Bson;
-using Blog;
 using Google.Protobuf.WellKnownTypes;
 
 namespace Blog.Server.Services;
