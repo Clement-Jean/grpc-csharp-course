@@ -1,6 +1,6 @@
 # gRPC C#
 
-## COUPON: `START_AUG`
+## COUPON: `START_OCT_2025`
 
 ## Reminder
 
